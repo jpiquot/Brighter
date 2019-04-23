@@ -9,21 +9,18 @@ namespace Paramore.Brighter.Outbox.Orleans.Grain
 {
     public class MessageOutboxGrain : Grain<MessageOutboxGrainState>, IMessageOutboxGrain
     {
-        public async Task<bool> Add(string command, string commandType, string contextKey)
+        public async Task<bool> Add(string message)
         {
-            if (string.IsNullOrEmpty(command) && string.IsNullOrEmpty(contextKey))
+            if (string.IsNullOrEmpty(message))
             {
-                State.Command = command;
-                State.CommandType = commandType;
-                State.ContextKey = contextKey;
-                State.SubmittedDateTime = DateTime.UtcNow;
+                State.Message = message;
+                State.DateTime = DateTime.UtcNow;
                 await WriteStateAsync();
                 return true;
             }
             return false;
         }
-        public Task<CommandAndContext> Get() 
-            => Task.FromResult(new CommandAndContext { ContextKey = State.ContextKey, Command = State.Command });
-        public Task<string> GetContextKey() => Task.FromResult(State.ContextKey);
+        public Task<string> Get() 
+            => Task.FromResult(State.Message);
     }
 }

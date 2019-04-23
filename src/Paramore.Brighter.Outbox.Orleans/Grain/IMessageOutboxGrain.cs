@@ -20,6 +20,5 @@ namespace Paramore.Brighter.Outbox.Orleans.Grain
         /// </summary>
         /// <returns></returns>
         Task<string> Get();
-        Task<string> GetContextKey();
     }
 }

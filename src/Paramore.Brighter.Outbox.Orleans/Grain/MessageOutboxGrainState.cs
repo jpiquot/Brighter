@@ -9,9 +9,7 @@ namespace Paramore.Brighter.Outbox.Orleans.Grain
     [Serializable]
     public class MessageOutboxGrainState
     {
-        public string Command { get; set; }
-        public string ContextKey { get; set; }
-        public string CommandType { get; set; }
-        public DateTime SubmittedDateTime { get; set; }
+        public string Message { get; set; }
+        public DateTime DateTime { get; set; }
     }
 }

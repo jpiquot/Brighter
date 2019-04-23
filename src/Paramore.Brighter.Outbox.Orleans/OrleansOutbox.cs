@@ -90,7 +90,7 @@ namespace Paramore.Brighter.Outbox.Orleans
         public IList<Message> Get(int pageSize = 100, int pageNumber = 1)
             => GetAsync(pageSize, pageNumber).GetAwaiter().GetResult();
         public void Add(Message message, int outBoxTimeout = -1)
-            => AddAsync(message, outBoxTimeout);
+            => AddAsync(message, outBoxTimeout).GetAwaiter().GetResult();
         public Message Get(Guid messageId, int outBoxTimeout = -1)
             => GetAsync(messageId, outBoxTimeout).GetAwaiter().GetResult();
     }
