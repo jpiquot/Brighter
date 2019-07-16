@@ -17,14 +17,13 @@ namespace Paramore.Brighter.Outbox.Orleans
                                  IAmAnOutboxViewer<Message>,
                                  IAmAnOutboxViewerAsync<Message>
     {
-        private static readonly Lazy<ILog> s_logger = new Lazy<ILog>(LogProvider.For<OrleansOutbox>);
+        private static readonly Lazy<ILog> SLogger = new Lazy<ILog>(LogProvider.For<OrleansOutbox>);
         private readonly IGrainFactory _grainFactory;
 
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="OrleansOutbox" /> class.
         /// </summary>
-        /// <param name="configuration">The configuration.</param>
         public OrleansOutbox(IGrainFactory grainFactory)
         {
             _grainFactory             = grainFactory;
@@ -51,13 +50,13 @@ namespace Paramore.Brighter.Outbox.Orleans
             {
                 if (outBoxTimeout != -1)
                 {
-                    s_logger.Value.WarnFormat("OrleansOutbox/Add: Timeout parameter is not supported. Value is ignored.");
+                    SLogger.Value.WarnFormat("OrleansOutbox/Add: Timeout parameter is not supported. Value is ignored.");
                 }
 
                 if (!await _grainFactory.GetGrain<IMessageOutboxGrain>(message.Id)
                                         .Add(JsonConvert.SerializeObject(message)))
                 {
-                    s_logger.Value.WarnFormat
+                    SLogger.Value.WarnFormat
                         (
                          "OrleansOutbox/Add: A duplicate message with the Id {0} was inserted into the Message Store, ignoring and continuing",
                          message.Id
@@ -66,10 +65,11 @@ namespace Paramore.Brighter.Outbox.Orleans
             }
             catch (Exception e)
             {
-                s_logger.Value.ErrorFormat
+                SLogger.Value.ErrorFormat
                     (
-                     "OrleansOutbox/Add: An error occurred while adding the message into the Message Store : "
-                   + e.Message + "\nCommand : " + JsonConvert.SerializeObject(message)
+                     "OrleansOutbox/Add: An error occurred while adding the message into the Message Store : " + e.Message
+                   + "\nCommand : "
+                   + JsonConvert.SerializeObject(message)
                     );
 
                 throw;
@@ -82,7 +82,7 @@ namespace Paramore.Brighter.Outbox.Orleans
             {
                 if (outBoxTimeout != -1)
                 {
-                    s_logger.Value.WarnFormat("OrleansOutbox/Get: Timeout parameter is not supported. Value is ignored.");
+                    SLogger.Value.WarnFormat("OrleansOutbox/Get: Timeout parameter is not supported. Value is ignored.");
                 }
 
                 string result = await _grainFactory.GetGrain<IMessageOutboxGrain>(messageId)
@@ -92,7 +92,7 @@ namespace Paramore.Brighter.Outbox.Orleans
             }
             catch (Exception e)
             {
-                s_logger.Value.ErrorFormat
+                SLogger.Value.ErrorFormat
                     (
                      "OrleansOutbox/Get: An error occurred while retreiving the Command {0} from the Message Store : "
                    + e.Message, messageId

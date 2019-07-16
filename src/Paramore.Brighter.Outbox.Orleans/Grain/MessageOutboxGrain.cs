@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Orleans;
 
@@ -13,14 +10,19 @@ namespace Paramore.Brighter.Outbox.Orleans.Grain
         {
             if (string.IsNullOrEmpty(message))
             {
-                State.Message = message;
+                State.Message  = message;
                 State.DateTime = DateTime.UtcNow;
                 await WriteStateAsync();
+
                 return true;
             }
+
             return false;
         }
-        public Task<string> Get() 
-            => Task.FromResult(State.Message);
+
+        public Task<string> Get()
+        {
+            return Task.FromResult(State.Message);
+        }
     }
 }
