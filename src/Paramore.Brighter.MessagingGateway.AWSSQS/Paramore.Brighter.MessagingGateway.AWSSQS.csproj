@@ -3,15 +3,14 @@
     <Description>Provides an implementation of the messaging gateway for decoupled invocation in the Paramore.Brighter pipeline, using awssqs</Description>
     <Authors>Deniz Kocak</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <DefineConstants>$(DefineConstants);LIBLOG_PORTABLE</DefineConstants>
     <PackageTags>awssqs;AMQP;Command;Event;Service Activator;Decoupled;Invocation;Messaging;Remote;Command Dispatcher;Command Processor;Request;Service;Task Queue;Work Queue;Retry;Circuit Breaker;Availability</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Paramore.Brighter\Paramore.Brighter.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AWSSDK.Core" Version="3.3.102.1" />
-    <PackageReference Include="AWSSDK.SQS" Version="3.3.100.29" />
-    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.18" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.102.6" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.3.100.34" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.23" />
   </ItemGroup>
 </Project>

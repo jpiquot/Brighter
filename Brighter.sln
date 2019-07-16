@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.28809.33
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{235DE1F1-E71B-4817-8E27-3B34FF006E4C}"
 	ProjectSection(SolutionItems) = preProject
@@ -150,10 +150,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingsSender", "samples\AWSTaskQueueSamples\GreetingsSender\GreetingsSender.csproj", "{9F0A56E6-292E-4613-AD0C-92495C50BEDD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingsPumper", "samples\AWSTaskQueueSamples\GreetingsPumper\GreetingsPumper.csproj", "{396D88BA-4BF3-4521-8017-D6EEF3D96337}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paramore.Brighter.Inbox.Orleans", "src\Paramore.Brighter.Inbox.Orleans\Paramore.Brighter.Inbox.Orleans.csproj", "{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paramore.Brighter.Outbox.Orleans", "src\Paramore.Brighter.Outbox.Orleans\Paramore.Brighter.Outbox.Orleans.csproj", "{64A6992A-1B80-415E-B716-664D25E8A54E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -717,30 +713,6 @@ Global
 		{396D88BA-4BF3-4521-8017-D6EEF3D96337}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{396D88BA-4BF3-4521-8017-D6EEF3D96337}.Release|x86.ActiveCfg = Release|Any CPU
 		{396D88BA-4BF3-4521-8017-D6EEF3D96337}.Release|x86.Build.0 = Release|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Debug|x86.Build.0 = Debug|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Release|x86.ActiveCfg = Release|Any CPU
-		{AB40676B-A9E7-49EC-A8BB-06255F9B4B26}.Release|x86.Build.0 = Release|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Debug|x86.Build.0 = Debug|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Release|x86.ActiveCfg = Release|Any CPU
-		{64A6992A-1B80-415E-B716-664D25E8A54E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
